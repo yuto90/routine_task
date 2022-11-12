@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:routine_task/size_config.dart';
 import '../model/provider.dart';
 import '../components/step.dart';
 
@@ -31,7 +32,7 @@ class AddRoutine extends ConsumerWidget {
             ),
           ),
           body: Container(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal! * 2),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -41,7 +42,8 @@ class AddRoutine extends ConsumerWidget {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(right: 8),
+                              padding: EdgeInsets.only(
+                                  right: SizeConfig.blockSizeHorizontal! * 2),
                               child: Column(
                                 children: [
                                   Container(
@@ -77,7 +79,8 @@ class AddRoutine extends ConsumerWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 10),
+                                  padding: EdgeInsets.only(
+                                      top: SizeConfig.blockSizeVertical! * 1),
                                   child: SizedBox(
                                     height: 100,
                                     width: 300,
@@ -105,10 +108,10 @@ class AddRoutine extends ConsumerWidget {
                             )
                           ],
                         ),
-                        const Divider(
-                          color: Color.fromARGB(255, 223, 221, 221),
-                          thickness: 2,
-                          height: 30,
+                        Divider(
+                          color: const Color.fromARGB(255, 223, 221, 221),
+                          thickness: SizeConfig.blockSizeHorizontal! * 0.5,
+                          height: SizeConfig.blockSizeHorizontal! * 5,
                           //indent: 20,
                           //endIndent: 20,
                         ),
