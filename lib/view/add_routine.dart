@@ -67,7 +67,8 @@ class AddRoutine extends ConsumerWidget {
                               children: [
                                 Text(
                                   'STEP ${i + 1}',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(
                                   height: 50,
@@ -127,7 +128,7 @@ class AddRoutine extends ConsumerWidget {
               ref.read(stepCount.notifier).state++;
               //ref.read(stepCount.notifier).update((state) => state + 1);
             },
-            child: const Icon(Icons.add),
+            child: const Icon(Icons.library_add_rounded),
           ),
         ),
       ),
