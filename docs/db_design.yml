@@ -1,0 +1,22 @@
+- user
+  - Authenticationのuuid PK
+  - name: String
+  - email: String
+  - created_at: Timestamp default current_timestamp
+  - updated_at: Timestamp default current_timestamp on update current_timestamp
+
+- routine
+  - id: String PK
+  - name: String
+  - numberOfDays: Int
+  - user_id: String FK
+  - created_at: Timestamp default current_timestamp
+  - updated_at: Timestamp default current_timestamp on update current_timestamp
+
+- step
+  - id: String 
+  - routine_id: String FK
+  - title: String
+  - detail: String
+  - created_at: Timestamp default current_timestamp
+  - updated_at: Timestamp default current_timestamp on update current_timestamp
