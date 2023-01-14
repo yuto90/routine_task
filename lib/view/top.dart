@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:routine_task/components/contributions.dart';
 import 'package:routine_task/size_config.dart';
+import 'package:routine_task/view/detail.dart';
 import '../model/provider.dart';
 import 'add_routine.dart';
 
@@ -29,12 +30,20 @@ class Top extends ConsumerWidget {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
-              ListTile(
-                leading: const Icon(Icons.face),
-                title: Text('$index'),
-                subtitle: const Text('ルーティン'),
-                trailing: Text('$index日継続中'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push<void>(
+                      MaterialPageRoute(builder: (context) => const Detail()));
+                },
+                // タッチ検出対象のWidget
+                child: ListTile(
+                  leading: const Icon(Icons.face),
+                  title: Text('$index'),
+                  subtitle: const Text('ルーティン'),
+                  trailing: Text('$index日継続中'),
+                ),
               ),
+
               // todo 渡すリストを可変にする
               Contributions(
                 contributionsList: ref.read(contributeMock.notifier).state,
