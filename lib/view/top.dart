@@ -30,12 +30,18 @@ class Top extends ConsumerWidget {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
-              GestureDetector(
-                onTap: () {
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  onPrimary: Colors.blue,
+                ),
+                onPressed: () {
                   Navigator.of(context).push<void>(
-                      MaterialPageRoute(builder: (context) => const Detail()));
+                    MaterialPageRoute(
+                      builder: (context) => Detail('ルーティン名', index),
+                    ),
+                  );
                 },
-                // タッチ検出対象のWidget
                 child: ListTile(
                   leading: const Icon(Icons.face),
                   title: Text('$index'),
